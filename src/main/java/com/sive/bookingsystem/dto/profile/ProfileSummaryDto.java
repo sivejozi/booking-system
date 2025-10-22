@@ -4,12 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProfileDto {
-    private String title, name, surname, email, cellphone, password, confirmPassword;
-    private Set<RoleDto> roles;
+public class ProfileSummaryDto {
+    private String email, password;
 }
