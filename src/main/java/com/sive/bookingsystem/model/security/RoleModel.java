@@ -1,12 +1,10 @@
 package com.sive.bookingsystem.model.security;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import org.apache.commons.lang3.builder.CompareToBuilder;
 
 import java.util.Set;
 
-@Data
 @Entity
 @Table(name = "roles", schema="public")
 public class RoleModel implements Comparable<RoleModel>{
@@ -27,6 +25,30 @@ public class RoleModel implements Comparable<RoleModel>{
     }
 
     public RoleModel() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<UserModel> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<UserModel> users) {
+        this.users = users;
     }
 
     @Override

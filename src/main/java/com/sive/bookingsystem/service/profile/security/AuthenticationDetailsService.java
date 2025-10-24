@@ -1,6 +1,6 @@
 package com.sive.bookingsystem.service.profile.security;
 
-import com.sive.bookingsystem.dto.profile.ProfileDto;
+import com.sive.bookingsystem.dto.profile.ProfileDTO;
 import com.sive.bookingsystem.exception.security.RoleNotFoundException;
 import com.sive.bookingsystem.model.repository.security.RoleRepository;
 import com.sive.bookingsystem.model.repository.security.UserRepository;
@@ -43,7 +43,7 @@ public class AuthenticationDetailsService implements UserDetailsService {
         return new User(user.getEmail(), user.getPassword(), authorities);
     }
 
-    public ProfileDto registerUser(ProfileDto profileDto) {
+    public ProfileDTO registerUser(ProfileDTO profileDto) {
         profileDto.setPassword(new BCryptPasswordEncoder().encode(profileDto.getPassword()));
         profileDto.setConfirmPassword(new BCryptPasswordEncoder().encode(profileDto.getConfirmPassword()));
         UserModel userModel = new UserModel();
@@ -63,7 +63,7 @@ public class AuthenticationDetailsService implements UserDetailsService {
             roles.add(userRole);
 
         userModel.setRoles(roles);
-        return modelMapper.map(profileRepository.save(userModel), ProfileDto.class);
+        return modelMapper.map(profileRepository.save(userModel), ProfileDTO.class);
     }
 
     private String generateToken() {

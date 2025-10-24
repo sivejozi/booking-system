@@ -54,4 +54,25 @@
             <column name="name" value="ROLE_CLIENT"/>
         </insert>
     </changeSet>
+
+    <changeSet id="3" author="Sive">
+        <createTable tableName="appointments" schemaName="public">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="appointment_date_time" type="TIMESTAMP(6)"/>
+            <column name="branch" type="VARCHAR(255)"/>
+            <column name="confirmation_code" type="VARCHAR(255)"/>
+            <column name="created_at" type="TIMESTAMP(6)"/>
+            <column name="customer_email" type="VARCHAR(255)"/>
+            <column name="customer_name" type="VARCHAR(255)"/>
+            <column name="customer_phone" type="VARCHAR(255)"/>
+            <column name="reason" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP(6)"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

@@ -1,14 +1,12 @@
-package com.sive.bookingsystem.dto.security.response.security;
+package com.sive.bookingsystem.dto.profile;
 
-import com.sive.bookingsystem.dto.profile.RoleDTO;
 import java.util.Set;
 
-public class AuthenticationResponse {
-    private String token, title, name, surname, email, cellphone, password, confirmPassword;
+public class ProfileDTO {
+    private String title, name, surname, email, cellphone, password, confirmPassword;
     private Set<RoleDTO> roles;
 
-    public AuthenticationResponse(String token, String title, String name, String surname, String email, String cellphone, String password, String confirmPassword, Set<RoleDTO> roles) {
-        this.token = token;
+    public ProfileDTO(String title, String name, String surname, String email, String cellphone, String password, String confirmPassword, Set<RoleDTO> roles) {
         this.title = title;
         this.name = name;
         this.surname = surname;
@@ -19,15 +17,7 @@ public class AuthenticationResponse {
         this.roles = roles;
     }
 
-    public AuthenticationResponse() {
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
+    public ProfileDTO() {
     }
 
     public String getTitle() {
